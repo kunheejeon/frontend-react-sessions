@@ -1,7 +1,12 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  function navigateHandler() {
+    navigate('/products');
+  }
   
   return (
     <Fragment>
@@ -9,6 +14,7 @@ const HomePage = () => {
       <p>
         Go to <Link to="/products">the list of products</Link>
       </p>
+      <button onClick={navigateHandler}>To Products</button>
     </Fragment>
   );
 };
